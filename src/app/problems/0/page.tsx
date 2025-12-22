@@ -13,7 +13,7 @@ const Page = () => {
           Submit Code
         </a>
         <div className="pdffile">
-          <embed src="/0.pdf" width="800px" height="600px" type="application/pdf"></embed>
+          <iframe src="https://docs.google.com/gview?url=https://raw.githubusercontent.com/jun10r-d3v/Pre-POSN1_2024/refs/heads/main/Day1/A1-Beginning/statement.pdf&embedded=true" width="800px" height="600px" sandbox="allow-scripts allow-same-origin"/>
         </div>
       </div>
       <Footer/>

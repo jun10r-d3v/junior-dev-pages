@@ -10,7 +10,7 @@ export default function Home() {
             <Header />
             <div className="hero">
                 <div className="logo">
-                    <img src = "https://beta-jdev.vercel.app/logo.png" alt="logo-JDev" />
+                    <img src = "/logo.png" alt="logo-JDev" />
                 </div>
                 <div className="text-reveal-container">
                     <h1 className="logo_name typing">Junior Dev</h1>
