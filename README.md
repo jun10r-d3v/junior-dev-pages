@@ -1,4 +1,4 @@
-This is the official website for [Junior Dev](https://beta-jdev.vercel.app/)!
+This is the official website for [Junior Dev](https://junior-dev-pages.vercel.app/)!
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
