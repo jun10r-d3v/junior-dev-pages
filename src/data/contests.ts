@@ -37,4 +37,28 @@ export const contests: Contest[] = [
         date: "15 Apr 2025 18:00 - 16 Apr 2025 00:00",
         linkTo: "https://codeforces.com/group/eScIVDG1u2/contest/601601"
     },
+    {
+        id: 6,
+        name: "Junior Dev Songkran Contest 2025 Day 2",
+        date: "14 Apr 2025 18:00 - 14 Apr 2025 23:00",
+        linkTo: "https://codeforces.com/group/eScIVDG1u2/contest/601600"
+    },
+    {
+        id: 7,
+        name: "Junior Dev Songkran Contest 2025 Day 1",
+        date: "13 Apr 2025 18:00 - 13 Apr 2025 22:00",
+        linkTo: "https://codeforces.com/group/eScIVDG1u2/contest/601600"
+    },
+    {
+        id: 8,
+        name: "April Fools Day Contest 2025 V2",
+        date: "1 Apr 2025 00:00 - 13 Apr 2025 00:10",
+        linkTo: "https://codeforces.com/group/eScIVDG1u2/contest/600583"
+    },
+    {
+        id: 9,
+        name: "April Fools Day Contest 2025",
+        date: "1 Apr 2025 00:00 - 2 Apr 2025 00:00",
+        linkTo: "https://codeforces.com/group/eScIVDG1u2/contest/579287"
+    },
 ]

@@ -9,16 +9,16 @@ import { problems } from "@/src/data/problems";
 export default function Problems() {
     const [problemList, setProblemList] = useState<Problem[]>(problems);
     const [searchProb, setSearchProb] = useState<string>("");
-    const showProblem = searchProb.trim().length===0?problemList:problemList.filter((problemList) => {
+    const showProblem = searchProb.trim().length===0?problemList:problemList.filter((problem) => {
         const search = searchProb.trim().toLocaleLowerCase();
-        return search===problemList.name.trim().toLowerCase().slice(0, search.length);
+        return search===problem.name.trim().toLowerCase().slice(0, search.length);
     });
     return (
         <div>
             <Header curPage={"problems"}/>
             <Container className="space-y-4">
                 <h1 className="font-bold text-xl sm:text-3xl">Problems</h1>
-                <input type="text" className="bg-white rounded-md text-stone-600 px-4 py-1 h-8 text-sm" placeholder="Search Problems"
+                <input type="text" className="bg-white rounded-md text-stone-600 px-4 py-1 h-8 text-sm" placeholder="Search Problems" value={searchProb}
                     onChange={(e) => {
                         setSearchProb(e.target.value);
                     }}
