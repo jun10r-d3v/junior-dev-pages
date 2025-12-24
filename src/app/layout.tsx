@@ -38,7 +38,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased 
-          bg-[url(/images/background.svg)] min-h-dvh relative
+          bg-[url(/images/background.svg)] min-h-dvh relative text-white
         `}
       >
         {children}

@@ -4,3 +4,8 @@ export type Contest = {
     date: string,
     linkTo: string,
 }
+
+export type Member = {
+    name: string,
+    role: string[],
+}

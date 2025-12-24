@@ -3,7 +3,7 @@ import Header from "@/src/components/header";
 import { Container } from "@/src/ui/Container";
 import { useState } from "react";
 import { Contest } from "../../types/types";
-import { contests } from "../../data/contest";
+import { contests } from "../../data/contests";
 import Image from "next/image";
   
 export default function Contests() {
