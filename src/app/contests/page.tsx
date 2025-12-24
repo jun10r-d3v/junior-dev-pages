@@ -1,11 +1,40 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from '../../components/header';
 import Footer from "../../components/footer";
 import "../../styles/contests.css";
-  
+
+type Contest = {
+    id: string;
+    name: string;
+    phase: string;
+    startTimeSeconds: number;
+    durationSeconds: number;
+};
+
+function formatContestTime(startSeconds:number, durationSeconds:number) {
+    const start = new Date(startSeconds * 1000);
+    const end = new Date((startSeconds + durationSeconds) * 1000);
+
+    const dateFormatter = new Intl.DateTimeFormat("en-GB", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+    });
+
+    const timeFormatter = new Intl.DateTimeFormat("en-GB", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false
+    });
+
+    return `${dateFormatter.format(start)} ${timeFormatter.format(start)} - ${timeFormatter.format(end)}`;
+}
+
+
 export default function Contests() {
+    const [contests, setContests] = useState<Contest[]>([]);
     useEffect(() => {
         const second = 1000, minute = second * 60, hour = minute * 60, day = hour * 24;
         const targetDate = new Date("2024-12-30T11:00:00Z").getTime();
@@ -25,6 +54,20 @@ export default function Contests() {
             }
         }, 1000);
         return () => clearInterval(x);
+    }, []);
+
+    useEffect(() => {
+        const fetchContests = async() => {
+            try{
+                const response = await fetch(`/api/contest`);
+                const contests = await response.json();
+                setContests(contests.result);
+            }catch(err){
+                console.error(err);
+            }
+        };
+    
+        fetchContests();
     }, []);
 
     return (
@@ -83,54 +126,25 @@ export default function Contests() {
                         <div className="container">
                             <div className="right-half">
                                     <div className="list2">
-                                        <a className="contest" href="https://codeforces.com/group/eScIVDG1u2/contest/570964" target="_blank" rel="noopener noreferrer">
-                                            <div className="flex" style={{ alignItems: "center" }}>
-                                                <div style={{ textAlign: 'center' }} className="flex flex-1 flex-col">
-                                                    <b>Junior Dev New Year Contest 2025</b>
-                                                    30/Dec/2024 18:00 - 1/Jan/2025 00:00
+                                        {/* MisterO Upgrade opal_Inwza007x Code!! */}
+                                        {contests
+                                        .filter(contest => contest.phase === "FINISHED")
+                                        .map(contest => (
+                                            <div key={contest.id}>
+                                            <a className="contest" href={`https://codeforces.com/group/eScIVDG1u2/contest/${contest.id}`} target="_blank" rel="noopener noreferrer">
+                                                <div className="flex" style={{ alignItems: "center" }}>
+                                                    <div style={{ textAlign: 'center' }} className="flex flex-1 flex-col">
+                                                        <b>{contest.name}</b>
+                                                          {formatContestTime(contest.startTimeSeconds,contest.durationSeconds)}
+                                                    </div>
+                                                    <div>
+                                                        <img className="platform" src="/codeforces.webp" alt="Codeforces" />
+                                                    </div>
                                                 </div>
-                                                <div>
-                                                    <img className="platform" src="/codeforces.webp" alt="Codeforces" />
-                                                </div>
+                                            </a>
+                                            <br />
                                             </div>
-                                        </a>
-                                        <br />
-                                        <a className="contest" href="https://codeforces.com/group/eScIVDG1u2/contest/560196" target="_blank" rel="noopener noreferrer">
-                                            <div className="flex" style={{ alignItems: "center" }}>
-                                                <div style={{ textAlign: 'center' }} className="flex flex-1 flex-col">
-                                                    <b>Junior Dev Loy Krathong Contest 2024</b>
-                                                    16/Nov/2024 19:00 - 23:00
-                                                </div>
-                                                <div>
-                                                    <img className="platform" src="/codeforces.webp" alt="Codeforces" />
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <br />
-                                        <a className="contest" href="https://codeforces.com/group/eScIVDG1u2/contest/553124" target="_blank" rel="noopener noreferrer">
-                                            <div className="flex" style={{ alignItems: "center" }}>
-                                                <div style={{ textAlign: 'center' }} className="flex flex-1 flex-col">
-                                                    <b>Pre-POSN1 DAY2 (2024)</b>
-                                                    9/Oct/2024 19:00 - 10/Oct/2024 00:00
-                                                </div>
-                                                <div>
-                                                    <img className="platform" src="/codeforces.webp" alt="Codeforces" />
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <br />
-                                        <a className="contest" href="https://codeforces.com/group/eScIVDG1u2/contest/553127" target="_blank" rel="noopener noreferrer">
-                                            <div className="flex" style={{ alignItems: "center" }}>
-                                                <div style={{ textAlign: 'center' }} className="flex flex-1 flex-col">
-                                                    <b>Pre-POSN1 DAY1 (2024)</b>
-                                                    8/Oct/2024 19:00 - 9/Oct/2024 00:00
-                                                </div>
-                                                <div>
-                                                    <img className="platform" src="/codeforces.webp" alt="Codeforces" />
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <br />
+                                        ))}
                                     </div> 
                             </div>
                         </div>
