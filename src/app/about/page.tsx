@@ -6,7 +6,7 @@ import { members } from "@/src/data/members";
 import { useState } from "react";
 
 export default function About() {
-    const [memberList, _setMemberList] = useState<Member[]>(members);
+    const [memberList] = useState<Member[]>(members);
     return (
         <div>
             <Header curPage={"about"}/>
