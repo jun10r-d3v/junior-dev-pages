@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import {Footer} from "../components/footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,10 +17,11 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Junior Dev",
   description: "Junior Dev Official Website",
+  metadataBase: new URL("https://junior-dev-pages.vercel.app"),
   openGraph: {
     images: [
       {
-        url: "/logo.png",
+        url: "/images/logo.svg",
         width: 1200,
         height: 630,
         alt: "Junior Dev",
@@ -36,9 +38,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased 
+          bg-[url(/images/background.svg)] min-h-dvh relative text-white
+        `}
       >
         {children}
+        <Footer className="fixed left-3 bottom-3"/>
       </body>
     </html>
   );

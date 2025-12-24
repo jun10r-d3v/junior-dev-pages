@@ -1,36 +1,16 @@
 "use client"
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, forwardRef } from "react";
 import Link from "next/link";
-import "../styles/footer_styles.css";
+import { cn } from "../lib/utils";
 
-export default function Footer() {
-    const [theme, setTheme] = useState(() => {
-        if (typeof window !== "undefined") {
-            return document.body.getAttribute("data-theme") || "light";
-        }
-        return "light"; 
-    });
 
-    useEffect(() => {
-        document.body.setAttribute("data-theme", theme);
-    }, [theme]);
-
-    const toggleTheme = () => {
-        setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
-    };
-
+export const Footer = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({className, ...props}, ref) => {
     return (
-        <footer className="Footer">
-            <center className="text-footer">
-                <Link href="/">© 2024 Junior Dev. All rights reserved.</Link>
-            </center>
-            <div className="themebutton">
-                {/* Toggle Theme:  */}
-                <button className="theme-toggle-btn" onClick={toggleTheme}>
-                    {/* {theme === "light" ? "   🌙 Dark Mode   " : "   ☀️ Light Mode   "} */}
-                </button>
-            </div>
+        <footer ref={ref} {...props}>
+            <Link href='/'>
+               <p className={cn(className, "text-xs sm:text-sm text-white")}>© 2024 Junior Dev. All rights reserved.</p>
+           </Link>
         </footer>
-    );
-}
+    )
+})
