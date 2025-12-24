@@ -19,7 +19,7 @@ export const members: Member[] = [
     },
     {
         name: "MisterO",
-        role: ["Contest Creator"]
+        role: ["DevOps Engineer"]
     },
     {
         name: "Paphangkon Praphuttiphong",
