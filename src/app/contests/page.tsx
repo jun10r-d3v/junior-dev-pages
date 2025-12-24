@@ -145,54 +145,6 @@ export default function Contests() {
                                             <br />
                                             </div>
                                         ))}
-                                        {/* <a className="contest" href="https://codeforces.com/group/eScIVDG1u2/contest/570964" target="_blank" rel="noopener noreferrer">
-                                            <div className="flex" style={{ alignItems: "center" }}>
-                                                <div style={{ textAlign: 'center' }} className="flex flex-1 flex-col">
-                                                    <b>Junior Dev New Year Contest 2025</b>
-                                                    30/Dec/2024 18:00 - 1/Jan/2025 00:00
-                                                </div>
-                                                <div>
-                                                    <img className="platform" src="/codeforces.webp" alt="Codeforces" />
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <br />
-                                        <a className="contest" href="https://codeforces.com/group/eScIVDG1u2/contest/560196" target="_blank" rel="noopener noreferrer">
-                                            <div className="flex" style={{ alignItems: "center" }}>
-                                                <div style={{ textAlign: 'center' }} className="flex flex-1 flex-col">
-                                                    <b>Junior Dev Loy Krathong Contest 2024</b>
-                                                    16/Nov/2024 19:00 - 23:00
-                                                </div>
-                                                <div>
-                                                    <img className="platform" src="/codeforces.webp" alt="Codeforces" />
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <br />
-                                        <a className="contest" href="https://codeforces.com/group/eScIVDG1u2/contest/553124" target="_blank" rel="noopener noreferrer">
-                                            <div className="flex" style={{ alignItems: "center" }}>
-                                                <div style={{ textAlign: 'center' }} className="flex flex-1 flex-col">
-                                                    <b>Pre-POSN1 DAY2 (2024)</b>
-                                                    9/Oct/2024 19:00 - 10/Oct/2024 00:00
-                                                </div>
-                                                <div>
-                                                    <img className="platform" src="/codeforces.webp" alt="Codeforces" />
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <br />
-                                        <a className="contest" href="https://codeforces.com/group/eScIVDG1u2/contest/553127" target="_blank" rel="noopener noreferrer">
-                                            <div className="flex" style={{ alignItems: "center" }}>
-                                                <div style={{ textAlign: 'center' }} className="flex flex-1 flex-col">
-                                                    <b>Pre-POSN1 DAY1 (2024)</b>
-                                                    8/Oct/2024 19:00 - 9/Oct/2024 00:00
-                                                </div>
-                                                <div>
-                                                    <img className="platform" src="/codeforces.webp" alt="Codeforces" />
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <br /> */}
                                     </div> 
                             </div>
                         </div>
