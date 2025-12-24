@@ -26,7 +26,7 @@ export default function Home() {
             <div className="flex-1 text-white flex flex-col justify-center items-center gap-y-4 sm:gap-y-8">
                 <Container className="flex justify-center items-center">
                     <div>
-                        <h1 className="text-xl sm:text-4xl md:text-7xl font-bold text-shadow-lg">{showName}</h1>
+                        <h1 className="text-xl md:text-3xl lg:text-7xl font-bold text-shadow-lg">{showName}</h1>
                         <ul className="list-disc p-4 sm:p-6">
                             <li>Think</li>
                             <li>Solve</li>
@@ -38,7 +38,7 @@ export default function Home() {
                             src={"/images/logo.svg"}
                             alt={"logo-JDev"}
                             fill
-                            sizes="(min-width: 640) 240px, 160px"
+                            sizes="(min-width: 640px) 240px, 160px"
                         />
                     </div>
                 </Container>

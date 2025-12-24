@@ -17,10 +17,11 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Junior Dev",
   description: "Junior Dev Official Website",
+  metadataBase: new URL("https://junior-dev-pages.vercel.app"),
   openGraph: {
     images: [
       {
-        url: "/logo.png",
+        url: "/images/logo.svg",
         width: 1200,
         height: 630,
         alt: "Junior Dev",

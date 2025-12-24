@@ -26,7 +26,7 @@ export const members: Member[] = [
         role: ["Frontend"]
     },
     {
-        name: "Filmy",
+        name: "Chakkrawut Onphuttha",
         role: ["UX/UI Designer"]
     },
 ]

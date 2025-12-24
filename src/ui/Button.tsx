@@ -3,7 +3,7 @@ import { cn } from "../lib/utils";
 import React, { ButtonHTMLAttributes, forwardRef } from "react";
 
 const buttonVariants = cva(
-  "inline-flex cursor-pointer",
+  "inline-flex cursor-pointer transition-opacity duration-200 hover:opacity-70",
   {
     variants: {
       variant: {

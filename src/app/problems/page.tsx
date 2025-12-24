@@ -17,7 +17,7 @@ export default function Problems() {
         <div>
             <Header curPage={"problems"}/>
             <Container className="space-y-4">
-                <h1 className="font-bold text-xl sm:text-4xl">Problems</h1>
+                <h1 className="font-bold text-xl sm:text-3xl">Problems</h1>
                 <input type="text" className="bg-white rounded-md text-stone-600 px-4 py-1 h-8 text-sm" placeholder="Search Problems"
                     onChange={(e) => {
                         setSearchProb(e.target.value);
