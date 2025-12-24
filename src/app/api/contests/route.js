@@ -49,11 +49,25 @@ export async function GET(){
         const start = new Date(contest.startTimeSeconds * 1000);
         const end = new Date((contest.startTimeSeconds + contest.durationSeconds) * 1000);
 
+        const dateFormatter = new Intl.DateTimeFormat("en-GB", {
+            timeZone: "Asia/Bangkok",
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        });
+
+        const timeFormatter = new Intl.DateTimeFormat("en-GB", {
+            timeZone: "Asia/Bangkok",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false
+        });
+
         return {
             id: contest.id,
             name: contest.name,
             phase: contest.phase,
-            date: `${start.toLocaleString("en-GB")} - ${end.toLocaleString("en-GB")}`,
+            date: `${dateFormatter.format(start)} ${timeFormatter.format(start)} - ${dateFormatter.format(end)} ${timeFormatter.format(end)}`,
             linkTo: `https://codeforces.com/group/${GROUP_CODE}/contest/${contest.id}`,
         }
     });
