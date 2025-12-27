@@ -32,16 +32,16 @@ export default function Contests() {
                 <main className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
                     {contestList.map((contest) => (
                         <a href={contest.linkTo} key={contest.id}>
-                            <div className="p-4 rounded-md bg-cyan-600 h-20 sm:h-28 flex gap-x-6 transition-opacity duration-200 hover:opacity-70">
+                            <div className="overflow-hidden rounded-md bg-cyan-600 h-20 sm:h-28 flex gap-x-6 transition-opacity duration-200 hover:opacity-70">
                                 <div className="relative h-full aspect-square">
                                     <Image
-                                        src={"/images/codeforces.webp"}
+                                        src={"/images/codeforces.jpg"}
                                         alt={"codeforces"}
                                         fill
                                         sizes="(min-width: 640px) 112px, 120px"
                                     />
                                 </div>
-                                <div className="min-w-0">
+                                <div className="min-w-0 p-2">
                                     <p className="text-base sm:text-lg font-bold truncate">{contest.name}</p>
                                     <p className="text-xs sm:text-sm truncate">{contest.date}</p>
                                 </div>
