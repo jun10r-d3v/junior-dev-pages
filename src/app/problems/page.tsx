@@ -7,7 +7,7 @@ import ProblemsPage from "./ProblemsClient";
 // const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
 async function getProblems(): Promise<Problem[]> {
-    const res = await fetch(`${process.env.BACKEND_URL}/problems`, {
+    const res = await fetch(`${process.env.SITE_URL}/api/problems`, {
         cache: "no-store",
     });
     // await sleep(50000);

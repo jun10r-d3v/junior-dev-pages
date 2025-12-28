@@ -5,7 +5,7 @@ import Image from "next/image";
 import ContestClient from "./ContestsClient";
 
 async function getContests(): Promise<Contest[]>{
-    const res = await fetch(`${process.env.BACKEND_URL}/contests`, {
+    const res = await fetch(`${process.env.SITE_URL}/api/contests`, {
         cache: "no-store",
     });
     if(!res.ok) throw new Error("Fail to fetch contest datas");
